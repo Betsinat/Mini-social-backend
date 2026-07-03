@@ -15,3 +15,10 @@ def greet_user(username: str, loud: bool = False):
         return {"message": f"Hello{username.upper()}!"}
     return {"message": f"Hello{username}"}
             
+@router.get("/users/{username}")
+def get_user(username: str):
+    return {
+        "username": username,
+        "followers": 120,
+        "posts": 15
+    }
