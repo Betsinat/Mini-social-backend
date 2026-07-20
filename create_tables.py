@@ -1,9 +1,9 @@
 from db.database import engine , Base
-from db.database import models
+from db import models
 
 print("Creating tables...")
 
-Base.metadata.creat_all(
+Base.metadata.create_all(
     bind = engine
 )
 
