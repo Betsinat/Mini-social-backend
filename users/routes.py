@@ -1,10 +1,10 @@
-from fastapi import APIRouter , Depends , HTTPSException
+from fastapi import APIRouter , Depends , HTTPException
 from sqlalchemy.orm import Session
 from db.database import get_db
 from schemas.user import userCreate , userResponse
 from users import service
 
-router = APIRouter()
+router = APIRouter(prefix="/users", tags=["Users"])
 
 # Define the POST route for creating a user;
 @router.post("/", response_model=userResponse, status_code=201)

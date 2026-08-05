@@ -1,15 +1,14 @@
-from pydantic import BaseModel , EmailStr
+from pydantic import BaseModel, EmailStr
 
 class userCreate(BaseModel):
-    username : str
-    email: str
-    age: str
+    email: EmailStr
+    password: str
 
-#what the server responds
+# what the server responds
 class userResponse(BaseModel):
     id: int
-    username:str
-    email:str
+    email: EmailStr
 
-    class Config:
-        from_attributes = True
+    model_config = {
+        "from_attributes": True
+    }
