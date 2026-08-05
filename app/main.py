@@ -6,3 +6,8 @@ app = FastAPI()
 
 app.include_router(users_router)
 app.include_router(posts_router)
+
+# Basic health check endpoint to verify server responsiveness
+@app.get("/ping")
+def ping():
+    return {"status": "ok"}
