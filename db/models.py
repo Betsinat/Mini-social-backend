@@ -11,6 +11,12 @@ class User(Base):
         primary_key=True,
         index=True,
     )
+    username = Column(
+        String,
+        unique=True,
+        nullable=False,
+        index=True,
+    )
     email = Column(
         String,
         unique=True,
